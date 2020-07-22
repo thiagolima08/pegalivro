@@ -29,7 +29,7 @@ public class Livro {
     private double preco;
 
     @NotNull
-    private boolean alugado;
+    private boolean reservado;
 
     @ManyToMany
     private List<Pedido> pedidos;
@@ -82,12 +82,12 @@ public class Livro {
         this.preco = preco;
     }
 
-    public boolean getAlugado() {
-        return alugado;
+    public boolean getReservado() {
+        return reservado;
     }
 
-    public void setAlugado(Boolean alugado) {
-        this.alugado = alugado;
+    public void setReservado(Boolean reservado) {
+        this.reservado = reservado;
     }
 
     public List<Pedido> getPedidos() {
