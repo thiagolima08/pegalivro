@@ -17,12 +17,14 @@ public class LivroController {
     @Autowired
     LivroService livroService;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/livros")
     public List<Livro> listarLivros(){
         List<Livro> livros = livroService.findAll();
         return livros;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/livros/{id}")
     public ResponseEntity<Livro> buscarLivro(@PathVariable(value = "id") long id){
         Livro livro = livroService.findById(id);
@@ -33,11 +35,13 @@ public class LivroController {
         return ResponseEntity.ok(livro);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/livros")
     public Livro cadastrarLivro(@Valid @RequestBody Livro livro){
         return livroService.save(livro);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/livros/{id}")
     public ResponseEntity<Void> excluirLivro(@PathVariable(value = "id") long id){
         Livro livro = livroService.findById(id);
@@ -48,6 +52,7 @@ public class LivroController {
         return ResponseEntity.noContent().build();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/livros/{id}")
     public ResponseEntity<Livro> alterarLivro(@PathVariable(value = "id") long id, @Valid @RequestBody Livro livro){
         Livro livroToUpdate = livroService.findById(id);

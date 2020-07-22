@@ -17,12 +17,14 @@ public class PedidoController {
     @Autowired
     PedidoService pedidoService;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/pedidos")
     public List<Pedido> listarPedidos(){
         List<Pedido> pedidos = pedidoService.findAll();
         return pedidos;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/pedidos/{id}")
     public ResponseEntity<Pedido> buscarPedido(@PathVariable(value = "id") long id){
         Pedido pedido = pedidoService.findById(id);
@@ -33,11 +35,13 @@ public class PedidoController {
         return ResponseEntity.ok(pedido);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/pedidos")
     public Pedido cadastrarPedido(@Valid @RequestBody Pedido pedido){
         return pedidoService.save(pedido);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/pedidos/{id}")
     public ResponseEntity<Void> excluirPedido(@PathVariable(value = "id") long id){
         Pedido pedido = pedidoService.findById(id);
@@ -48,6 +52,7 @@ public class PedidoController {
         return ResponseEntity.noContent().build();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/pedidos/{id}")
     public ResponseEntity<Pedido> alterarPedido(@PathVariable(value = "id") long id, @Valid @RequestBody Pedido pedido){
         Pedido pedidoToUpdate = pedidoService.findById(id);

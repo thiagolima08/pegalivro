@@ -17,12 +17,14 @@ public class ClienteController {
     @Autowired
     ClienteService clienteService;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/clientes")
     public List<Cliente> listarClientes(){
         List<Cliente> clientes = clienteService.findAll();
         return clientes;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/clientes/{id}")
     public ResponseEntity<Cliente> buscarCliente(@PathVariable(value = "id") long id){
         Cliente cliente = clienteService.findById(id);
@@ -33,6 +35,7 @@ public class ClienteController {
         return ResponseEntity.ok(cliente);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/clientes")
     public Cliente cadastrarCliente(@Valid @RequestBody Cliente cliente){
         return clienteService.save(cliente);
@@ -48,6 +51,7 @@ public class ClienteController {
         return ResponseEntity.noContent().build();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/clientes/{id}")
     public ResponseEntity<Cliente> alterarCliente(@PathVariable(value = "id") long id, @Valid @RequestBody Cliente cliente){
         Cliente clienteToUpdate = clienteService.findById(id);
