@@ -9,7 +9,7 @@ Frontend em Desenvolvimento com Angular 9
 
 O Backend se trata de uma API REST para gerenciamento de uma loja que aluga livros. Através da API a empresa poderá manter o cadastro dos livros, clientes, aluguéis. Será possivel acompanhar no Frontend um dashboard com os livros que estão sendo devolvidos e alugados em tempo real.
 
-![](../../prints/tela-inicial.png)
+![](./prints/tela-inicial.png)
 
 ![](./prints/menu-drawer.png)
 
