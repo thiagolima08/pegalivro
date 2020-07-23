@@ -22,13 +22,13 @@ O Backend se trata de uma API REST para gerenciamento de uma loja que aluga livr
 ## Rodando o projeto
 
 Foi feito deploy do Backend no Heroku, sendo possível acessar através da seguinte URL, "https://apirest-pegalivro.herokuapp.com/api", 
-O cors está configurando para aceitar requisições de "http://localhost:4200", geralmente a porta 4200 é utilizada por aplicações angular.
+O cors está configurado para aceitar requisições de "http://localhost:4200", geralmente a porta 4200 é utilizada por aplicações angular.
 Para Acessar a API, métodos GET, POST, PUT e DELETE :
 livros: https://apirest-pegalivro.herokuapp.com/api/livros,
 Clientes: https://apirest-pegalivro.herokuapp.com/api/clientes,
 Pedidos: https://apirest-pegalivro.herokuapp.com/api/pedidos
 
-Se preferir fazer download do projeto é necessário criar o database no banco de dados para que as tabelas sejam criadas, e assim poderá aceitar os registros.
+Se preferir fazer download do projeto é necessário criar o database no banco de dados para que as tabelas sejam criadas, e configurar o arquivo application properties, alterar a linha 2, para "spring.datasource.url=url_do_banco_local/nome_do_database", assim poderá aceitar os registros.
 
 
 ## Desenvolvedor
