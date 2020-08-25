@@ -1,0 +1,12 @@
+.clienteTable,.livrosTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clienteTable{
+    margin-bottom: 30px;
+}
+
+
