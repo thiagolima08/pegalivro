@@ -1,0 +1,43 @@
+<!-- <form style="margin-top: 10px;margin-left: 30px;">
+  <div class="row justify-content-center align-items-end">
+    <div class="col-lg-2 ml-2">
+      <label for="cpfInput">CPF</label>
+      <input type="text" class="form-control" id="cpfInput" placeholder="xxx.xxx.xxx-xx">
+    </div>
+    <div class="col">
+      <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+    </div>
+  </div>
+</form> -->
+<table class="table table-hover" *ngIf="(clientes$ | async) as clientes; else loading" style="color: #4B4B5B;max-width: 700px;margin-left: 30px;margin-top: 10px;">
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>CPF</th>
+        <th>Telefone</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+          <td>{{ cliente.nome }}</td>
+          <td>{{ cliente.cpf }}</td>
+          <td>{{ cliente.telefone }}</td>
+          <td>{{ cliente.email }}</td>
+        <!-- <td>
+          <span class="float-right">
+            <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(cliente.id)">
+              Atualizar
+            </button>
+
+            <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(cliente)">
+              Remover
+            </button>
+          </span>
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #loading>
+    <p style="margin-left: 30px;margin-top: 10px;">Carregando Clientes...</p>
+  </ng-template>

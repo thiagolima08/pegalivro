@@ -1,0 +1,16 @@
+form{
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #4B4B5B;
+}
+
+form input, button{
+    width: 300px;
+}
+
+.ng-invalid.ng-touched:not(form){
+    border: 1px solid red;
+}
